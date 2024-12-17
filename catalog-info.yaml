@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "go-ms"
+  description: "Go Microservice"
+  tags:
+    - microservice
+    - go
+  annotations:
+    github.com/project-slug: botopsy/go-ms
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: "go-ms"
+    backstage.io/kubernetes-id: "go-ms"
+  links:
+    - url: https://github.com/botopsy/go-ms-k8s
+      title: View K8s repo
+      icon: github
+spec:
+  type: service
+  lifecycle: experimental
+  owner: "group:default/infra"
