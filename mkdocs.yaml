@@ -1,0 +1,8 @@
+site_name: "go-ms"
+site_description: "Go Microservice"
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core
