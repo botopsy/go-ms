@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: botopsy/go-ms-k8s
+          token: ${{ secrets.GH_ACTION_TOKEN }}
       - name: Change Image tag
         run: |
           yq -i '.images[0].newTag = "${{ env.IMAGE_TAG }}"' overlays/dev/kustomization.yaml
