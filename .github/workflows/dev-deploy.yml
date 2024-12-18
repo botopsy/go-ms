@@ -18,4 +18,11 @@ jobs:
       - name: Change Image tag
         run: |
           yq -i '.images[0].newTag = "${GITHUB_SHA::7}"' overlays/dev/kustomization.yaml
-
+          cat overlays/dev/kustomization.yaml
+      - name: Push Changes
+        run: |
+          git add .
+          git config --local user.email github-actions
+          git config --local user.name github-actions@github.com
+          git commit -m "Update deployment" -a
+          git push
