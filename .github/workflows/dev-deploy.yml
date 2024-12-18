@@ -1,9 +1,10 @@
 name: Deploy GO app to Dev K8s 🚀
 
 on:
-  push:
-    branches:
-      - main
+ workflow_run: 
+  workflows: ['Build and Push Docker Image to GHCR']
+  types:
+    - completed
 
 jobs:
   deploy-app:
