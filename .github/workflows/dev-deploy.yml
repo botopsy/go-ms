@@ -1,0 +1,21 @@
+name: Deploy GO app to Dev K8s 🚀
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-app:
+    name: Deploy GO App on K8s
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout K8s code
+        uses: actions/checkout@v4
+        with:
+          repository: botopsy/go-ms-k8s
+      - name: Change Image tag
+        run: |
+          yq -i '.images[0].newTag = "${GITHUB_SHA::7}"' overlays/dev/kustomization.yaml
+
