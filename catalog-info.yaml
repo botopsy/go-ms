@@ -15,6 +15,15 @@ metadata:
     - url: https://github.com/botopsy/go-ms-k8s
       title: View K8s repo
       icon: github
+    - url: https://go-ms-dev.127.0.0.1.sslip.io
+      title: App Link Dev
+      icon: externalLink
+    - url: https://go-ms-qa.127.0.0.1.sslip.io
+      title: App Link QA
+      icon: externalLink
+    - url: https://go-ms.127.0.0.1.sslip.io
+      title: App Link Prod
+      icon: externalLink
 spec:
   type: service
   lifecycle: experimental
